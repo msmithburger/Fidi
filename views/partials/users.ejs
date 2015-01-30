@@ -1,0 +1,6 @@
+<ul>
+	<li ng-repeat="user in users">
+	  <a href="#/{{user._id}}">{{user.name}}</a>
+	</li>
+</ul>
+New user <input type="text" ng-model="newUser"><button ng-click="save()">Create</button>
