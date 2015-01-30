@@ -1,0 +1,19 @@
+body, html {
+	height: 100%;
+}
+
+.login {
+	background-color: #edeff1;
+	height: 100%;
+	padding: 0;
+	padding-top: 60px;
+
+	
+}
+.login .logo img {
+		display: block;
+		margin: 0 auto;
+	}
+.login-form {
+	padding-top: 60px;
+}
