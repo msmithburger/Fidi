@@ -1,7 +1,19 @@
 body, html {
 	height: 100%;
 }
-
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 0;
+}
+.container {
+	padding: 0;
+	padding-top: 41px;
+	position: relative;
+}
 .login {
 	background-color: #edeff1;
 	height: 100%;
@@ -16,4 +28,51 @@ body, html {
 	}
 .login-form {
 	padding-top: 60px;
+}
+
+.main-nav {
+	float: none;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+}
+
+.main-nav > .btn {
+	border-radius: 0 !important;
+	width: 33%;
+}
+.main-nav > .btn:nth-child(2) {
+	width: 34%;
+}
+
+.faceroll {
+	padding: 20px;
+}
+.faceroll li {
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 10px;
+	min-height: 70px;
+	padding-bottom: 5px;
+	position: relative;
+}
+.faceroll .leftroll {
+	left: 0;
+	position: absolute;
+	width: 60px;
+}
+.faceroll .leftroll img {
+	max-width: 100%;
+}
+.faceroll .rightroll {
+	padding-left: 70px;
+}
+.faceroll .rightroll p {
+	font-size: 12px;
+	line-height: 18px;
+}
+.faceroll .rightroll .join-link {
+	width: 90px;
+	padding: 5px 10px;
+	float: right;
+	font-size: 11px;
 }

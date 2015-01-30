@@ -1,12 +1,12 @@
-angular.module('app', ['ngRoute', 'ngResource'])
+var fidi = angular.module('app', ['ngRoute', 'ngResource']);
 
-.factory('Users', ['$resource', function($resource){
+fidi.factory('Users', ['$resource', function($resource){
   return $resource('/api/users/:id', null, {
     'update': { method:'PUT' }
   });
 }])
 
-.controller('UserController', ['$scope', 'Users', function ($scope, Users) {
+fidi.controller('UserController', ['$scope', 'Users', function ($scope, Users) {
   $scope.users = Users.query();
   $scope.save = function(){
   if(!$scope.newUser || $scope.newUser.length < 1) return;
@@ -19,22 +19,27 @@ angular.module('app', ['ngRoute', 'ngResource'])
   }
 }])
 
-.controller('UserDetailCtrl', ['$scope', '$routeParams', 'Users', function ($scope, $routeParams, Users) {
+fidi.controller('UserDetailCtrl', ['$scope', '$routeParams', 'Users', function ($scope, $routeParams, Users) {
   $scope.user = Users.get({id: $routeParams.id });
 }])
 
-.controller('LoginCtrl', ['$scope', function ($scope) {
+fidi.controller('LoginController', ['$scope', function ($scope) {
   
 }])
 
-.config(['$routeProvider', function ($routeProvider) {
+fidi.controller('HomeController', ['$scope', function ($scope) {
+  
+}])
+
+fidi.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'partials/login',
-      controller: 'UserController'
+      controller: 'LoginController'
     })
-    .when('/:id', {
-      templateUrl: 'partials/userDetails',
-      controller: 'UserDetailCtrl'
-    })
+    .when('/home', {
+      templateUrl: 'partials/home',
+      controller: 'HomeController'
+    });
+    $locationProvider.html5Mode(true);
 }]);
