@@ -17,10 +17,9 @@ p {
 .login {
 	background-color: #edeff1;
 	height: 100%;
+	margin: 0;
 	padding: 0;
 	padding-top: 60px;
-
-	
 }
 .login .logo img {
 		display: block;
@@ -75,4 +74,24 @@ p {
 	padding: 5px 10px;
 	float: right;
 	font-size: 11px;
+}
+.faceroll .rightroll .join-going {
+	display: none;
+	float: right;
+	font-style: italic;
+	font-size: 12px;
+	padding: 5px 25px;
+}
+
+.search .select {
+	width: 100%;
+}
+.search .btn.submit {
+	margin-top: 20px;
+}
+.search .container {
+	padding: 41px 20px 20px 20px;
+}
+.search h5 {
+	font-size: 20px
 }

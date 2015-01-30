@@ -28,7 +28,22 @@ fidi.controller('LoginController', ['$scope', function ($scope) {
 }])
 
 fidi.controller('HomeController', ['$scope', function ($scope) {
-  
+  $scope.$on('$viewContentLoaded', function(event){
+    $('.join-link').on('click', function() {
+      $(this).hide();
+      $(this).siblings('.join-going').show();
+      return false;
+    });
+  });
+
+}])
+
+fidi.controller('SearchController',  ['$scope', function ($scope) {
+    $scope.$on('$viewContentLoaded', function(event){
+      if ($('[data-toggle="select"]').length) {
+        $('[data-toggle="select"]').select2();
+      }
+    });
 }])
 
 fidi.config(['$routeProvider','$locationProvider', function ($routeProvider, $locationProvider) {
@@ -40,6 +55,10 @@ fidi.config(['$routeProvider','$locationProvider', function ($routeProvider, $lo
     .when('/home', {
       templateUrl: 'partials/home',
       controller: 'HomeController'
+    })
+    .when('/search', {
+      templateUrl: 'partials/search',
+      controller: 'SearchController'
     });
     $locationProvider.html5Mode(true);
 }]);
