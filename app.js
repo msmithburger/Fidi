@@ -4,28 +4,30 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var dbConfig = require('./config/database.js');
+var mongoose = require('mongoose');
+var app = express();
 mongoose.connect(dbConfig.url);
 
 // Configuring Passport
-var passport = require('passport');
-var expressSession = require('express-session');
+//var passport = require('passport');
+//var expressSession = require('express-session');
 
-app.use(expressSession({secret: 'mySecretKey'}));
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(expressSession({secret: 'mySecretKey'}));
+//app.use(passport.initialize());
+// app.use(passport.session());
 
-passport.serializeUser(function(user, done) {
-  done(null, user._id);
-});
+// passport.serializeUser(function(user, done) {
+//   done(null, user._id);
+// });
  
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
+// passport.deserializeUser(function(id, done) {
+//   User.findById(id, function(err, user) {
+//     done(err, user);
+//   });
+// });
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
