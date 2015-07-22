@@ -44,8 +44,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var routes = require('./routes');
 var users = require('./routes/users');
+var activities = require('./routes/activity');
 
+// Default route for index view
 app.get('/', routes.index);
+// Allows angular to hit the view routes
 app.get('/partials/:name', routes.partials);
 
 // JSON API
@@ -56,6 +59,13 @@ app.get('/api/users/:id', users.user);
 app.post('/api/users', users.addUser);
 app.put('/api/users/:id', users.editUser);
 app.delete('/api/users/:id', users.deleteUser);
+
+app.get('/api/activities', activities.activities);
+
+app.get('/api/activities/:id', activities.activity);
+app.post('/api/activities', activities.addActivity);
+app.put('/api/activities/:id', activities.editActivity);
+app.delete('/api/activities/:id', activities.deleteActivity);
 
 app.get('*', routes.index);
 

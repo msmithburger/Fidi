@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 var Activity = require('../models/Activity.js');
 
-/* GET /activity listing. */
-exports.activity = function(req, res, next) {
+/* GET /activities listing. */
+exports.activities = function(req, res, next) {
   Activity.find(function (err, activity) {
     if (err) return next(err);
     res.json(activity);

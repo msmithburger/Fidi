@@ -9,9 +9,16 @@ ul, li {
 p {
 	margin: 0;
 }
+select {
+	border: 1px solid #34495E !important;
+	height: 40px !important;
+}
+h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
 .container {
-	padding: 0;
-	padding-top: 41px;
+	padding-top: 80px;
 	position: relative;
 }
 .login {
@@ -89,9 +96,32 @@ p {
 .search .btn.submit {
 	margin: 30px 0;
 }
-.search .container {
-	padding: 41px 20px 20px 20px;
-}
 .search h5 {
 	font-size: 20px
+}
+
+.create-activity h5 {
+	font-size: 20px
+}
+.create-activity .btn.submit {
+	margin: 30px 0;
+}
+.create-activity .select, .create-activity input {
+	width: 100%;
+}
+.create-activity input {
+	padding: 5px;
+}
+
+.activities li {
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+}
+.activities li:last-child {
+	border: none;
+}
+.activities h5 {
+	font-size: 16px;
+	margin-bottom: 0px;
 }
